@@ -79,8 +79,8 @@ echo '' && echo '##Completed install Openssh'
 cp ./contrib/sshd.pam.generic /etc/pam.d/sshd
 cp -p contrib/redhat/sshd.init /etc/init.d/sshd
 chmod +x /etc/init.d/sshd
-echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 echo "Port 202" >> /etc/ssh/sshd_config
+echo "Port 10022" >> /etc/ssh/sshd_config
 systemctl enable sshd
 systemctl restart sshd
 

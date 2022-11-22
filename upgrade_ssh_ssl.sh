@@ -54,7 +54,7 @@ cp -r /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 
 yum -y remove openssh
 
-wget -c --no-check-certificate http://fastly.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.0p1.tar.gz
+wget -c --no-check-certificate https://fastly.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.0p1.tar.gz
 
 echo '' && echo '##Completed download Openssh LTS.'
 
@@ -81,7 +81,7 @@ cp -p contrib/redhat/sshd.init /etc/init.d/sshd
 chmod +x /etc/init.d/sshd
 echo "PermitRootLogin no" >> /etc/ssh/sshd_config
 echo "Port 202" >> /etc/ssh/sshd_config
-echo "Port 10022" >> /etc/ssh/sshd_config
+#echo "Port 10022" >> /etc/ssh/sshd_config
 systemctl enable sshd
 systemctl restart sshd
 
